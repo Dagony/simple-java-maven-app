@@ -1,11 +1,8 @@
 package com.mycompany.app;
 
 import org.junit.After;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
@@ -20,7 +17,6 @@ public class AppTest
 {
 
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
-    private static final Logger LOGGER = LoggerFactory.getLogger(App.class);
 
     @Before
     public void setUpStreams() {
@@ -41,9 +37,9 @@ public class AppTest
     {
         App.main(null);
         try {
-            assertEquals("Hello World!", outContent.toString());
+            assertEquals("Hello World!" + System.getProperty("line.separator"), outContent.toString());
         } catch (AssertionError e) {
-            Assert.fail("\"message\" is not \"Hello World!\"");
+            fail("\"message\" is not \"Hello World!\"");
         }
     }
 

@@ -1,26 +1,20 @@
 package com.mycompany.app;
 
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 /**
  * Hello world!
  */
 public class App
 {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(App.class);
+    private final String message = "Hello World!";
 
-    private final static String message = "Hello World!";
-
-    App() {}
+    public App() {}
 
     public static void main(String[] args) {
-        LOGGER.info(new App().getMessage());
+        System.out.println(new App().getMessage());
     }
 
-    private String getMessage() {
+    private final String getMessage() {
         return message;
     }
 
