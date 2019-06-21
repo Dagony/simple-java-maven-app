@@ -8,7 +8,9 @@ public class App
 
     private final String message = "Hello World!";
 
-    public App() {}
+    public App() {
+        /* Do nothing, because message is set in private function */
+    }
 
     public static void main(String[] args) {
         System.out.println(new App().getMessage());
